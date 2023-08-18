@@ -51,58 +51,161 @@ nav a:hover {
 }
 
 /* Hero section styles */
-/* Hero section styles */
+/* Animation keyframes for fading in text */
+@keyframes fadeInLogoAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes animation for fading in the text and buttons */
+@keyframes fadeInTextButtonsAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the hero text and buttons */
+.hero-text,
+.cta-buttons {
+  opacity: 0;
+  animation: fadeInTextButtonsAnimation 1.5s ease-in-out forwards;
+}
+
 .hero {
   background-color: #5e82e0;
   color: white;
   text-align: center;
   padding: 150px 0;
+  position: relative;
+  overflow: hidden; /* Hide any overflow content */
+}
+
+/* Add a class for animating the text fade-in effect */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1.5s ease-in-out forwards;
+}
+
+/* Add a class for showing the hero content */
+.hero-content-show {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-}
-.hero-text {
-  max-width: 600px;
-  margin-right: 20px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeInAnimation 1.5s ease-in-out forwards;
 }
 
-.hero-text h1 {
-  font-size: 36px;
+@keyframes fadeInAnimation {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-text {
+  max-width: 600px;
+  padding-right: 30px; /* Adjusted padding to create space */
+  text-align: left; /* Align text to the left */
+}
+
+.hero-title {
+  font-size: 42px; /* Larger title font size */
   margin-bottom: 10px;
 }
 
-.hero-text p {
+.hero-description {
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: row; /* Keep buttons in a row by default */
+  align-items: center; /* Center align the buttons */
+  margin-top: 10px; /* Add a small top margin */
 }
 
 .cta-button {
   display: inline-block;
   background-color: #385fc4;
   color: white;
-  padding: 10px 25px;
+  padding: 10px 25px; /* Buttons have the same padding */
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  margin-right: 15px;
+  margin-right: 10px; /* Add spacing between buttons */
 }
 
 .cta-button:hover {
-  background-color: #2c53ba;
+  background-color: #2c53ba; /* Hover effect color */
   transform: scale(1.05);
 }
 
-.hero-logo img {
-  width: 250px; /* Slightly bigger logo */
+.hero-logo {
+  width: 130px; /* Larger logo width */
   height: auto;
-  margin-top: 20px;
-  animation: wave 3s infinite linear; /* Slightly faster wave animation */
+  position: absolute;
+  top: 10px; /* Adjust vertical position */
+  right: 120px; /* Adjust horizontal position */
+  transform: translate(0, -50%);
+  transition: transform 0.4s ease-in-out; /* Add transition for hover effect */
+  animation: wave 3s infinite linear,
+    fadeInLogoAnimation 1.5s ease-in-out forwards;
+}
+
+.hero-logo img {
+  width: 250px; /* Larger logo width */
+  height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .cta-button {
+    margin-right: 0; /* Remove margin between vertically stacked buttons */
+    margin-bottom: 15px; /* Add margin between vertically stacked buttons */
+  }
+
+  .hero-text {
+    padding-right: 15px; /* Reset padding */
+    text-align: center; /* Center-align text on mobile */
+  }
+
+  .hero-description {
+    padding-right: 20px; /* Reset padding */
+    text-align: center; /* Center-align text on mobile */
+  }
+
+  .hero-logo {
+    width: 260px; /* Smaller logo width for smaller screens */
+    top: 50px; /* Adjust vertical position on mobile */
+    right: 40px; /* Adjust horizontal position on mobile */
+    transform: none;
+    position: static;
+  }
 }
 
 @keyframes wave {
@@ -111,26 +214,28 @@ nav a:hover {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px); /* Slightly faster wave */
+    transform: translateY(-10px); /* Adjust wave animation */
   }
 }
 
 /* Features section styles */
 .features {
   background-color: #f8f9fa;
-  padding: 80px 0; /* Increased padding to push down the section */
+  padding: 40px 0;
   text-align: center;
 }
 
 .features h2 {
-  font-size: 30px; /* Increased font size */
-  margin-bottom: 40px;
+  font-size: 28px;
+  margin-bottom: 30px;
   color: #333;
 }
 
 .feature-box-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow boxes to wrap onto the next line */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -139,21 +244,22 @@ nav a:hover {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 40px; /* Increased padding */
+  padding: 30px;
   border: 2px solid #5e82e0;
-  transition: transform 0.3s ease-in-out;
-  width: calc(33.33% - 40px);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  width: calc(33.33% - 40px); /* 3 boxes in a row with margin in between */
   text-align: center;
-  flex: 0 0 calc(33.33% - 40px);
-  margin-top: 20px; /* Added margin to push boxes down */
+  margin: 20px;
+  transform-style: preserve-3d;
 }
 
 .feature-box:hover {
   transform: translateY(-5px);
+  background-color: #f1f1f1; /* Highlight background color */
 }
 
 .feature-box h3 {
-  font-size: 28px; /* Increased font size */
+  font-size: 24px;
   margin-bottom: 15px;
   color: #385fc4;
 }
@@ -246,7 +352,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #007bff;
+  color: #4e98e7;
 }
 
 .footer-copy {
@@ -258,17 +364,17 @@ footer {
 /* Style the under construction page */
 .under-construction {
   text-align: center;
-  padding: 100px;
+  padding: 50px; /* Adjusted padding */
 }
 
 .under-construction h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 24px; /* Adjusted font size */
+  margin-bottom: 15px; /* Adjusted margin */
 }
 
 .under-construction p {
-  font-size: 18px;
-  margin-bottom: 30px;
+  font-size: 16px; /* Adjusted font size */
+  margin-bottom: 20px; /* Adjusted margin */
 }
 
 .back-button {
