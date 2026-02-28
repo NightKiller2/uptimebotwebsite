@@ -1,130 +1,360 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <meta
       name="description"
-      content="UptimeBot - Monitor your Discord bot's status and uptime."
+      content="Track bot uptime and downtime in your server with watchlists, smart alerts, and clean status tools."
     />
-    <link
-      rel="icon"
-      href="https://cdn.discordapp.com/attachments/1136404941653684315/1141535717860847707/uptimeboticonround.png"
-      type="image/x-icon"
-    />
-    <title>UptimeBot</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="uptimeboticonround.png" type="image/png" />
+    <title>UptimeBot | Discord Uptime &amp; Downtime Alerts</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
+    <div class="page-bg" aria-hidden="true">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav-wrap">
+        <a class="brand" href="#top" aria-label="UptimeBot homepage">
+          <img src="uptimeboticonround.png" alt="" />
+          <span>UptimeBot</span>
+        </a>
+        <ul class="nav-links">
           <li><a href="#features">Features</a></li>
-          <li><a href="#">Commands</a></li>
-          <li><a href="#">Vote</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#commands">Commands</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
+        <a
+          href="https://discord.com/oauth2/authorize?client_id=1136402072867180565"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button button-small"
+          >Add to Discord</a
+        >
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
+    <main id="top">
+      <section class="hero section">
         <div class="hero-content">
-          <div class="hero-text">
-            <h1 class="hero-title">UptimeBot</h1>
-            <p class="hero-description">
-              Time to add UptimeBot to your server.<br />
-              The all in one bot status tracker!
-            </p>
-            <div class="cta-buttons">
+          <h1>Track uptime and downtime without the noise.</h1>
+          <p class="hero-copy">
+            UptimeBot helps server owners and staff monitor the bots they rely
+            on most. Build a personal watchlist, get smart online/offline
+            alerts and manage everything through a fast interactive menu.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="https://discord.com/oauth2/authorize?client_id=1136402072867180565"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+              >Invite UptimeBot</a
+            >
+            <a
+              href="https://discord.gg/EvnxThGmed"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+              >Join Support Server</a
+            >
+          </div>
+          <div class="hero-metrics">
+            <article>
+              <p class="metric-label">Watchlists</p>
+              <p class="metric-value">Per-user</p>
+            </article>
+            <article>
+              <p class="metric-label">Notifications</p>
+              <p class="metric-value">Anti-spam smart timing</p>
+            </article>
+            <article>
+              <p class="metric-label">Setup</p>
+              <p class="metric-value">Quick onboarding commands</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="status-panel discord-preview" aria-label="Scrump status preview">
+          <p class="author-line"><span class="mention">@NightKiller_2</span></p>
+
+          <article class="embed-card embed-up">
+            <div class="embed-main">
+              <div>
+                <h3>Bot Uptime Detected!</h3>
+                <p>
+                  <span class="mention">@Scrump</span>
+                  is now
+                  <strong>online</strong>
+                  <span class="status-dot online"></span>
+                </p>
+              </div>
               <a
-                href="https://discord.com/api/oauth2/authorize?client_id=1136402072867180565&permissions=137439333440&scope=bot"
+                class="embed-thumb-link"
+                href="https://scrumpbot.com"
                 target="_blank"
-                class="cta-button"
-                >Invite Bot</a
+                rel="noopener noreferrer"
+                aria-label="Visit Scrump website"
               >
-              <a
-                href="https://discord.gg/EvnxThGmed"
-                target="_blank"
-                class="cta-button"
-                >Support Server</a
-              >
+                <img
+                  class="embed-thumb"
+                  src="https://cdn.discordapp.com/avatars/717716451699589143/d386261374323e1d52bf3fdf808bed6b.webp?size=1024"
+                  alt="Scrump avatar"
+                />
+              </a>
             </div>
-          </div>
-          <div class="hero-logo">
-            <img
-              src="https://cdn.discordapp.com/attachments/1136404941653684315/1141535717860847707/uptimeboticonround.png"
-              alt="UptimeBot Logo"
-            />
-          </div>
-        </div>
-      </section>
-    </main>
-    
-
-      <section class="features" id="features">
-        <h2>Features</h2>
-        <div class="feature-box-container">
-          <div class="feature-box">
-            <h3>Monitoring</h3>
-            <p>Keep a constant eye on bot statuses.</p>
-          </div>
-          <div class="feature-box">
-            <h3>Downtime Alerts</h3>
-            <p>
-              Receive immediate notifications when a bot encounters downtime.
-            </p>
-          </div>
-          <div class="feature-box">
-            <h3>Placeholder Text</h3>
-            <p>Placeholder Text.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="stats-background">
-          <h2>Bot Statistics</h2>
-          <div class="stats-content">
-            <div class="stats-graphic">
+            <p class="embed-foot">
               <img
-                src="https://cdn.discordapp.com/attachments/1136404941653684315/1141558450992717824/image-removebg-preview.png"
-                alt="Statistics Graphic"
+                src="uptimeboticonround.png"
+                alt=""
               />
+              <span>Powered by UptimeBot • Today at 3:15 PM</span>
+            </p>
+          </article>
+
+          <p class="author-line author-repeat"><span class="mention">@NightKiller_2</span></p>
+
+          <article class="embed-card embed-down">
+            <div class="embed-main">
+              <div>
+                <h3>Bot Downtime Detected!</h3>
+                <p>
+                  <span class="mention">@Scrump</span>
+                  is now
+                  <strong>offline</strong>
+                  <span class="status-dot offline"></span>
+                </p>
+              </div>
+              <a
+                class="embed-thumb-link"
+                href="https://scrumpbot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Scrump website"
+              >
+                <img
+                  class="embed-thumb"
+                  src="https://cdn.discordapp.com/avatars/717716451699589143/d386261374323e1d52bf3fdf808bed6b.webp?size=1024"
+                  alt="Scrump avatar"
+                />
+              </a>
             </div>
-            <div class="stats-details">
-              <h3>Servers</h3>
-              <p>Currently serving over [Placeholder] servers worldwide.</p>
-              <h3>Users</h3>
-              <p>Used by more than [Placeholder] Discord users.</p>
-            </div>
-          </div>
+            <p class="embed-foot">
+              <img
+                src="uptimeboticonround.png"
+                alt=""
+              />
+              <span>Powered by UptimeBot • Today at 3:17 PM</span>
+            </p>
+          </article>
+        </aside>
+      </section>
+
+      <section class="section features" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">What You Get</p>
+          <h2>Built for real-world bot monitoring</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Per-user Watchlists</h3>
+            <p>
+              Track the bots that matter to you without mixing everyone into one
+              noisy list.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Ping Channel Alerts</h3>
+            <p>
+              Send uptime and downtime notifications to a configured server
+              channel.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Interactive Watchlist Menu</h3>
+            <p>
+              Add, remove, refresh, and clear tracked bots with a clean menu
+              flow.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Add by ID or Name</h3>
+            <p>
+              Search by name or paste bot ID, then confirm exactly what you want
+              to track.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Pending Queue Previews</h3>
+            <p>
+              Review pending changes before committing updates to avoid mistakes.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Premium Coming Soon</h3>
+            <p>
+              If you're interested in larger watchlist, feel free to reach out in our <a class="inline-link" href="https://discord.gg/EvnxThGmed" target="_blank" rel="noopener noreferrer"
+                >Support Server</a>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section how-it-works" id="how-it-works">
+        <div class="section-heading">
+          <p class="eyebrow">Quick Setup</p>
+          <h2>Get running in three steps</h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span>01</span>
+            <h3>Configure the Server</h3>
+            <p>
+              Use <code>/setpingchannel</code> and <code>/settings</code> to
+              finish onboarding fast.
+            </p>
+          </article>
+          <article class="step">
+            <span>02</span>
+            <h3>Build Your Watchlist</h3>
+            <p>
+              Open <code>/watchlist</code> and add bots by ID or search with
+              confirmation prompts.
+            </p>
+          </article>
+          <article class="step">
+            <span>03</span>
+            <h3>Stay Informed</h3>
+            <p>
+              Get clean uptime/downtime updates, and inspect bots with
+              <code>/checkinfo</code>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section commands" id="commands">
+        <div class="section-heading">
+          <p class="eyebrow">Core Commands</p>
+          <h2>Everything important is one command away</h2>
+        </div>
+        <div class="command-grid">
+          <article class="command-item">
+            <h3><code>/watchlist</code></h3>
+            <p>Manage tracked bots with add/remove/refresh/clear tools.</p>
+          </article>
+          <article class="command-item">
+            <h3><code>/setpingchannel</code></h3>
+            <p>Choose where uptime and downtime alerts are sent.</p>
+          </article>
+          <article class="command-item">
+            <h3><code>/settings</code></h3>
+            <p>View your server configuration and current setup values.</p>
+          </article>
+          <article class="command-item">
+            <h3><code>/checkinfo</code></h3>
+            <p>Inspect bot status details when you need a quick check.</p>
+          </article>
+          <article class="command-item">
+            <h3><code>/help</code> <code>/commands</code> <code>/support</code></h3>
+            <p>Find command info and support links from inside Discord.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Made for uptime, status and server management</h2>
+        </div>
+        <div class="faq-list">
+          <article>
+            <h3>How does UptimeBot reduce alert spam?</h3>
+            <p>
+              Smart notification timing and auto-expiring menu sessions keep
+              channels readable while still reporting important status changes.
+            </p>
+          </article>
+          <article>
+            <h3>What does UptimeBot actually do?</h3>
+            <p>
+              UptimeBot monitors the bots you add to your watchlist and posts
+              clear online and offline updates in your configured alert channel.
+              It helps staff quickly see status changes without manual checking.
+            </p>
+          </article>
+          <article>
+            <h3>How do I start tracking bots in my server?</h3>
+            <p>
+              Run <code>/setpingchannel</code> to choose where alerts go, then
+              open <code>/watchlist</code> to add bots by name or ID. Once added,
+              UptimeBot handles uptime and downtime notifications automatically.
+            </p>
+          </article>
+          <article>
+            <h3>How long is server data kept?</h3>
+            <p>
+              If UptimeBot is removed from a server, that server's configuration
+              and watchlist data is automatically deleted after 7 days. If the bot
+              is re-added before 7 days, the process will be canceled.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta-block">
+        <h2>Keep every server update clear and on time.</h2>
+        <p>
+          Track the bots your community relies on with watchlists, smarter
+          alerts, and cleaner status tools.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=1136402072867180565"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-primary"
+            >Invite Bot</a
+          >
+          <a
+            href="https://github.com/NightKiller2/uptimebotwebsite"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-secondary"
+            >View GitHub</a
+          >
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="footer-links">
-        <div class="about-links">
+    <footer class="site-footer">
+      <div class="footer-sections">
+        <div class="footer-column">
           <h3>About</h3>
           <ul>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="tos.html">Terms of Service</a></li>
           </ul>
         </div>
-        <div class="bot-links">
+        <div class="footer-column">
           <h3>Links</h3>
           <ul>
             <li>
-              <a href="https://discord.gg/EvnxThGmed" target="_blank"
+              <a href="https://discord.gg/EvnxThGmed" target="_blank" rel="noopener noreferrer"
                 >Support Server</a
               >
             </li>
             <li>
               <a
-                href="https://discord.com/api/oauth2/authorize?client_id=1136402072867180565&permissions=137439333440&scope=bot"
+                href="https://discord.com/oauth2/authorize?client_id=1136402072867180565"
                 target="_blank"
+                rel="noopener noreferrer"
                 >Invite Bot</a
               >
             </li>
@@ -132,13 +362,55 @@
               <a
                 href="https://github.com/NightKiller2/uptimebotwebsite"
                 target="_blank"
+                rel="noopener noreferrer"
                 >GitHub</a
               >
             </li>
           </ul>
         </div>
       </div>
-      <p class="footer-copy">&copy; 2023 UptimeBot. All rights reserved. Not affiliated with Discord.</p>
+      <p class="footer-copy">
+        &copy; 2026 UptimeBot. All rights reserved. Not affiliated with Discord.
+      </p>
+      <p class="footer-disclaimer">
+        UptimeBot is provided for general informational purposes and is not a
+        mission-critical monitoring system. Alerts may be delayed, incomplete,
+        or affected by Discord API limitations.
+      </p>
     </footer>
+    <script>
+      (() => {
+        const cards = document.querySelectorAll(
+          ".card, .step, .command-item, .faq-list article"
+        );
+
+        if (!cards.length || !window.matchMedia("(hover: hover)").matches) {
+          return;
+        }
+
+        const updateShine = (card, event) => {
+          const rect = card.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          card.style.setProperty("--shine-x", `${x}px`);
+          card.style.setProperty("--shine-y", `${y}px`);
+        };
+
+        cards.forEach((card) => {
+          card.addEventListener("pointerenter", (event) => {
+            card.style.setProperty("--shine-opacity", "1");
+            updateShine(card, event);
+          });
+
+          card.addEventListener("pointermove", (event) => {
+            updateShine(card, event);
+          });
+
+          card.addEventListener("pointerleave", () => {
+            card.style.setProperty("--shine-opacity", "0");
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
