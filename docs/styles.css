@@ -210,6 +210,11 @@ h3 {
   border-color: var(--primary);
 }
 
+.cta-invite-button {
+  font-size: 1.08rem;
+  padding: 14px 28px;
+}
+
 .button-small {
   font-size: 0.93rem;
   padding: 10px 14px;
